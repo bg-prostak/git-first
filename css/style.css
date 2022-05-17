@@ -44,6 +44,8 @@ address {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -178,16 +180,20 @@ address {
   margin-bottom: 80px;
 }
 
-.section-skills .content__list ul {
+.section-skills .content__list .skills__list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 89px;
 }
 
-.section-skills .content__list ul li {
+.section-skills .content__list .skills__list .skills__list_item {
+  width: 146px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -197,12 +203,12 @@ address {
           flex-direction: column;
 }
 
-.section-skills .content__list ul li .image {
+.section-skills .content__list .skills__list .skills__list_item .image {
   height: 88px;
   margin-bottom: 23px;
 }
 
-.section-skills .content__list ul li .subtext {
+.section-skills .content__list .skills__list .skills__list_item .subtext {
   margin-bottom: 40px;
   font-size: 14px;
   line-height: 17px;
@@ -213,17 +219,20 @@ address {
           flex: 1 1 auto;
 }
 
-.section-skills .content__list ul li .stars {
+.section-skills .content__list .skills__list .skills__list_item .stars {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
 }
 
-.section-skills .content__list ul li .stars li:not(:last-child) {
+.section-skills .content__list .skills__list .skills__list_item .stars li:not(:last-child) {
   margin-right: 9px;
 }
 
-.section-skills .content__list ul li .stars li:not(:last-child) img {
+.section-skills .content__list .skills__list .skills__list_item .stars li:not(:last-child) img {
   border-radius: 1px;
 }
 

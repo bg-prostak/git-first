@@ -10,26 +10,34 @@
       href="https://fonts.googleapis.com/css?family=Roboto:500,700"
       rel="stylesheet"
     />
+    <script src="/scripts/jquery-3.6.0.min.js"></script>
+    <script src="/scripts/script.js"></script>
   </head>
   <body>
     <!-- header -->
     <section class="section-outer section-header">
-      <div class="section-inner">
+      <div class="section-inner section-header__container">
         <ul class="nav">
-          <li class="nav__item"><a href="#">Home</a></li>
-          <li class="nav__item"><a href="#">About me</a></li>
-          <li class="nav__item"><a href="#">Skills</a></li>
-          <li class="nav__item"><a href="#">Portfolio</a></li>
-          <li class="nav__item"><a href="#">Contacts</a></li>
+          <li class="nav__item"><a href="#home">Home</a></li>
+          <li class="nav__item"><a href="#about-me">About me</a></li>
+          <li class="nav__item"><a href="#skills">Skills</a></li>
+          <li class="nav__item"><a href="#portfolio">Portfolio</a></li>
+          <li class="nav__item"><a href="#contacts">Contacts</a></li>
         </ul>
       </div>
     </section>
     <!-- !header -->
     <!-- main -->
-    <section class="section-outer section-main">
+    <section class="section-outer section-main" id="home">
       <div class="section-inner">
         <div class="content">
-          <h1>Denis<br />Novik</h1>
+          <div class="name">
+            <h1>Denis<br />Novik</h1>
+
+            <a href="#" class="menu-burger">
+              <span></span>
+            </a>
+          </div>
           <div class="info">
             <span>UX | UI designer</span>
             <span>24 years old, Minsk</span>
@@ -47,7 +55,7 @@
     </section>
     <!-- !main -->
     <!-- about -->
-    <section class="section-outer section-about">
+    <section class="section-outer section-about" id="about-me">
       <div class="section-inner">
         <div class="content">
           <h2 class="content__title">About me</h2>
@@ -64,7 +72,7 @@
     </section>
     <!-- !about -->
     <!-- skills -->
-    <section class="section-outer section-skills">
+    <section class="section-outer section-skills" id="skills">
       <div class="section-inner">
         <div class="content">
           <h2 class="content__title">Skills</h2>
@@ -143,7 +151,7 @@
     </section>
     <!-- !skills -->
     <!-- portfolio -->
-    <section class="section-outer section-portfolio">
+    <section class="section-outer section-portfolio" id="portfolio">
       <div class="section-inner">
         <h2 class="content__title">Portfolio</h2>
         <div class="section-portfolio__block">
@@ -182,7 +190,7 @@
     </section>
     <!-- !portfolio -->
     <!-- contact -->
-    <section class="section-outer section-contact">
+    <section class="section-outer section-contact" id="contacts">
       <div class="section-inner">
         <h2 class="content__title">Contacts</h2>
         <span class="subtext"

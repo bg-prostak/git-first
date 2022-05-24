@@ -28,6 +28,12 @@ address {
   font-style: normal;
 }
 
+@media screen and (max-width: 425px) {
+  body.lock {
+    overflow: hidden;
+  }
+}
+
 .section-inner {
   max-width: 973px;
   margin: 0 auto;
@@ -35,12 +41,12 @@ address {
   padding-right: 15px;
 }
 
-.section-header {
+.section-header .section-header__container {
   padding-top: 32px;
   border-bottom: 1px solid #828282;
 }
 
-.section-header .nav {
+.section-header .section-header__container .nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -52,14 +58,46 @@ address {
   margin-bottom: 33px;
 }
 
-.section-header .nav__item {
+.section-header .section-header__container .nav__item {
   font-size: 18px;
   line-height: 22px;
   color: #828282;
 }
 
-.section-header .nav__item:hover {
+.section-header .section-header__container .nav__item:hover {
   color: #070707;
+}
+
+@media screen and (max-width: 425px) {
+  .section-header .section-header__container {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    position: absolute;
+    border-bottom: none;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    overflow: auto;
+  }
+  .section-header .section-header__container .nav {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .section-header .section-header__container .nav__item {
+    font-size: 34px;
+    line-height: 42px;
+    margin-bottom: 5vh;
+  }
+}
+
+.section-header .section-header__container.active {
+  top: 0;
 }
 
 .section-main {
@@ -78,9 +116,93 @@ address {
           justify-content: space-between;
 }
 
+@media screen and (max-width: 425px) {
+  .section-main .content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .section-main .content .info {
+    margin-top: 23px;
+    margin-bottom: 36px;
+  }
+  .section-main .content .name {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .section-main .content .name .menu-burger {
+    z-index: 11;
+    visibility: visible;
+  }
+}
+
 .section-main .content h1 {
   font-size: 47.3392px;
   line-height: 59px;
+}
+
+.section-main .content .menu-burger {
+  display: block;
+  position: relative;
+  visibility: hidden;
+  width: 35px;
+  height: 20px;
+}
+
+.section-main .content .menu-burger span {
+  position: absolute;
+  top: 50%;
+  margin-top: -2px;
+  left: 50%;
+  margin-left: -15px;
+  width: 33px;
+  height: 4px;
+  background-color: #000;
+}
+
+.section-main .content .menu-burger span::before,
+.section-main .content .menu-burger span::after {
+  position: absolute;
+  width: 33px;
+  height: 4px;
+  background-color: #000;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.section-main .content .menu-burger span::before {
+  content: '';
+  -webkit-transform: translateY(-8px);
+          transform: translateY(-8px);
+}
+
+.section-main .content .menu-burger span::after {
+  content: '';
+  -webkit-transform: translateY(8px);
+          transform: translateY(8px);
+}
+
+.section-main .content .menu-burger.active span::before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.section-main .content .menu-burger.active span::after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.section-main .content .menu-burger.active span {
+  height: 0;
 }
 
 .section-main .content .info {
@@ -102,6 +224,12 @@ address {
   display: flex;
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
+}
+
+@media screen and (max-width: 425px) {
+  .section-main .content .buttons {
+    display: none;
+  }
 }
 
 .section-main .content .buttons button {
@@ -323,6 +451,11 @@ address {
   display: flex;
   gap: 60px;
   margin-bottom: 45px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .section-contact .social_text {
